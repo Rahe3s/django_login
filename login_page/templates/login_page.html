@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{%  block style %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login_style.css' %}">
+{% endblock %}
+{% block start %}
+<body>
+    
+    <div class="login-container">
+        <h2>Login</h2>
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: red;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <div class="container">
+      <h1>User Registration</h1>
+      <form method="post" action="{%url 'home'%}">
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">login</button>
+      </form>
+    </div>
+</body>
+{% endblock %}

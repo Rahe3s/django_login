@@ -1,0 +1,1 @@
+default_app_config = 'login_page.apps.MyAppConfig'
